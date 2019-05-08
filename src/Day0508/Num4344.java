@@ -15,7 +15,7 @@ public class Num4344 {
 		
 		for (int i = 0; i < C; i++) {
 			col = scan.nextInt();
-			insert[i] = new int[col];
+			insert[i] = new int[col + 1];
 			insert[i][0] = col;
 			for (int j = 1; j < insert[i].length; j++) {
 				insert[i][j] = scan.nextInt();
@@ -23,10 +23,21 @@ public class Num4344 {
 		}
 		
 		for (int i = 0; i < C; i++) {
-			for (int j = 0; j < insert[i].length; j++) {
-				System.out.print(insert[i][j] + " ");
+			
+			float avg = 0;
+			float total = 0;
+			int count = 0;
+			
+			for (int j = 1; j < insert[i].length; j++) {
+				total += insert[i][j];
 			}
-			System.out.println();
+			avg = total / insert[i][0];
+			for (int k = 1; k < insert[i].length; k++) {
+				if (insert[i][k] > avg)
+					count ++;
+			}
+			System.out.println(String.format("%.3f", (float) count / (float) insert[i][0] * 100) + "%");
+		
 		}
 		
 	}
