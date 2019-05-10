@@ -25,7 +25,7 @@ public class Num1018 {
 		
 		int row = 0, column = 0;
 		
-		int min = 0, temp = 0, temp1 = 0, temp2 = 0;
+		int min = 99999, temp = 0, temp1 = 0, temp2 = 0;
 		
 		while (row != (m-7) && column != (n-7)) {
 			
@@ -54,12 +54,8 @@ public class Num1018 {
 				column ++;
 			}
 			
-			if (min == 0) {
+			if (min > temp) {
 				min = temp;
-			} else {
-				if (min > temp) {
-					min = temp;
-				}
 			}
 			
 			countRawW = 0;
